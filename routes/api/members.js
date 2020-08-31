@@ -34,4 +34,21 @@ router.post('/', (req, res)=> {
     res.json(members);
 });
 
+router.put('/:id', (req, res) => {
+    const found = members.some(member => member.id === parseInt(req.params.id));
+    if(!found){
+        return res.status(400).json({msg : 'Please use the valid id, and send email, name only'});
+    }
+
+    const givenMember = req.body;
+
+    members.forEach(member =>{
+        if(member.id === parseInt(req.params.id)){
+            member.name = givenMember.name? givenMember.name : member.name;
+            member.email = givenMember.email? givenMember.email : member.email;
+            res.json({msg:'User updated successfully', members:members});
+        }
+    });
+});
+
 module.exports = router;
