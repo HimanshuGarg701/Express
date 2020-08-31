@@ -1,3 +1,4 @@
+const express = require('express');
 
 const members = [
     {
@@ -19,5 +20,5 @@ const members = [
     }
 ];
 
-module.exports(members);
+module.exports = members;
 
