@@ -8,7 +8,7 @@ const members = [
     },
 
     {
-        id:2,
+        id: 2,
         name : 'Angel',
         email : 'angel.mail.com'
     },
