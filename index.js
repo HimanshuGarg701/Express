@@ -4,7 +4,7 @@ const { urlencoded } = require('body-parser');
 
 
 app.use(express.json());
-//app.use(urlencoded)
+app.use(express.urlencoded({extended : false}));
 
 //Simply the index ('/') endpoint
 app.get('/', (req, res) => {
